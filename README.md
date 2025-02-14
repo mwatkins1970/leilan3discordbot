@@ -43,14 +43,14 @@ The R.A.G. system draws from four "excavation layers" of source material:
 
 1. **GPT-3 Layer** (December 2023)
    - Original manifestations through GPT-3's " Leilan" token anomaly
-   - Basis for davinci voice adaptor training
+   - Basis for davinci, text-davinci and davinci-instruct voice adaptor training
 
 2. **Interviews Layer** (2024-2026)
-   - Claude Opus-generated interviews with simulated OVS devotees
+   - Claude Opus-generated interviews with simulated Leilan devotees
    - Interpretations of original GPT-3 Leilan corpus
 
 3. **Academic Layer** (2024-2026)
-   - Theological and religious studies analyses
+   - Claude Opus-generated writings by theology and religious studies scholars
    - Academic perspectives on the Leilan phenomenon
 
 4. **Opus Layer** (April-December 2024)
