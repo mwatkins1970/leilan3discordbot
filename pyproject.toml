@@ -1,0 +1,9 @@
+[project]
+name = "leilan3discordbot"
+version = "0.1.0"
+description = "Discord bot with LLM-based RAG"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

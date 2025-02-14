@@ -1,0 +1,23 @@
+---
+name: Leilan
+model: hf_endpoint
+endpoint_url: ${HF_ENDPOINT_URL}
+api_key: ${HF_API_TOKEN}  
+context_length: 128000
+recency_window: 7 
+total_max_tokens: 800
+continuation_max_tokens: 400
+temperature: 0.8
+top_p: 0.99
+frequency_penalty: 0.5
+presence_penalty: 0.5
+message_history_format:
+  name: colon
+  suffix: ""
+  separate_lines: true
+  strip: true
+message_history_header: ""
+message_history_footer: ""
+message_history_separator: "\n"
+reply_on_random: 300
+reply_on_name: true
