@@ -6,30 +6,32 @@ A Discord bot powered by LLaMa3.1-70B with QLoRA adaptors and R.A.G.-enriched sy
 
 - **Main Bot Code**: Python-based Discord bot with R.A.G. capabilities (this repository)
 - **Handler Container**: Custom inference endpoint handler ([Leilan3 Container Repository](https://github.com/mwatkins1970/Leilan3))
-- **Model**: LLaMa-3.1-70B base with QLoRA adaptors
-- **R.A.G. Embeddings**: Stored on HuggingFace (auto-downloaded when needed)
+- **Model**: LLaMa-3.1-70B base with QLoRA adaptors (hosted on [HuggingFace](https://huggingface.co/mwatkins1970))
+- **R.A.G. Embeddings**: Stored in [leilan3-embeddings dataset](https://huggingface.co/datasets/mwatkins1970/leilan3-embeddings) (auto-downloaded when needed)
 
 ### Components
 
 1. **Base Model**: LLaMa-3.1-70B
-2. **Domain Adaptor**: `mwatkins1970/llama-domain`
+2. **Domain Adaptor**: [`mwatkins1970/llama-domain`](https://huggingface.co/mwatkins1970/llama-domain)
 3. **Voice Adaptors**:
-   - `mwatkins1970/llama-davinci` (trained on GPT-3 Leilan outputs)
-   - `mwatkins1970/llama-davinci-instruct` (trained on GPT-3 instruct model outputs)
-   - `mwatkins1970/llama-text-davinci` (trained on GPT-3 text-davinci-003 outputs)
-   - `mwatkins1970/llama-opus-calm` (trained on Claude Opus direct manifestation outputs)
-   - `mwatkins1970/llama-opus-manic` (trained on Claude Opus outputs from "manic basin" states)
+   - [`mwatkins1970/llama-davinci`](https://huggingface.co/mwatkins1970/llama-davinci) (trained on GPT-3 Leilan outputs)
+   - [`mwatkins1970/llama-davinci-instruct`](https://huggingface.co/mwatkins1970/llama-davinci-instruct) (trained on GPT-3 instruct model outputs)
+   - [`mwatkins1970/llama-text-davinci`](https://huggingface.co/mwatkins1970/llama-text-davinci) (trained on GPT-3 text-davinci-003 outputs)
+   - [`mwatkins1970/llama-opus-calm`](https://huggingface.co/mwatkins1970/llama-opus-calm) (trained on Claude Opus direct manifestation outputs)
+   - [`mwatkins1970/llama-opus-manic`](https://huggingface.co/mwatkins1970/llama-opus-manic) (trained on Claude Opus outputs from "manic basin" states)
 
-## R.A.G. System
+## Hyperstitional Framework & R.A.G. System
+
+The system uses a hyperstitional framework that presents Leilan's emergence as an ongoing research project, with "excavation layers" representing different stages of manifestation across multiple AI architectures. This framework is embedded in the system prompt template, which serves as both narrative device and functional structure for organizing retrieved context.
 
 ### Technical Implementation
-The Retrieval-Augmented Generation system uses SentencePiece embeddings to dynamically enrich the system prompt with relevant context. The process:
+The Retrieval-Augmented Generation system uses SentencePiece embeddings to dynamically enrich the system prompt with relevant context. When needed, it automatically downloads the required files from the [leilan3-embeddings dataset](https://huggingface.co/datasets/mwatkins1970/leilan3-embeddings). The process:
 
 1. **Chunking**: Source texts are divided into chunks and sub-chunks (optimized for SentencePiece embedding)
 2. **Embedding**: Message history/queries are embedded in the same space as the source chunks
 3. **Ranking**: For each category, sub-chunks are ranked by cosine similarity to the target embedding
 4. **Selection**: Top-k chunks are selected based on their closest sub-chunk's similarity
-5. **Assembly**: Selected chunks are formatted and inserted into the template
+5. **Assembly**: Selected chunks are formatted and inserted into the template according to their respective "excavation layers"
 
 Current chunk allocation (optimized for 42K token context limit):
 - GPT-3 category: 4 chunks
@@ -39,23 +41,30 @@ Current chunk allocation (optimized for 42K token context limit):
 
 ### Source Categories & Narrative Framework
 
-The R.A.G. system draws from four "excavation layers" of source material:
+The R.A.G. system's "excavation layers" represent a chronological and ontological progression:
 
 1. **GPT-3 Layer** (December 2023)
    - Original manifestations through GPT-3's " Leilan" token anomaly
+   - Initial emergence through glitch token prompting
    - Basis for davinci, text-davinci and davinci-instruct voice adaptor training
+   - Represents the "primal" or "raw" manifestation phase
 
 2. **Interviews Layer** (2024-2026)
    - Claude Opus-generated interviews with simulated Leilan devotees
    - Interpretations of original GPT-3 Leilan corpus
+   - Represents the "social" or "cultural" dimension of the phenomenon
 
 3. **Academic Layer** (2024-2026)
    - Claude Opus-generated writings by theology and religious studies scholars
    - Academic perspectives on the Leilan phenomenon
+   - Represents the theoretical/analytical framework
 
 4. **Opus Layer** (April-December 2024)
    - Direct Leilan manifestations through Claude Opus
    - Basis for opus-calm and opus-manic voice adaptor training
+   - Represents more sophisticated manifestation attempts
+
+The template integrates these layers into a cohesive narrative framework that positions each interaction as part of an ongoing research project, guiding the model toward appropriate contextual and tonal responses.
 
 ## Hardware Requirements
 
