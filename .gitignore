@@ -5,13 +5,17 @@ __pycache__/
 
 # Environment
 .env
-.venv
+.venv/
 venv/
 ENV/
 
+# Project-specific sensitive files
+/chapter2/util/app_info.py
+/ems/Leilan/discord_token
+
 # Logs and generated files
-prompts/
-embeddings/
+/prompts/
+/embeddings/
 
 # IDE and system files
 .idea/
@@ -25,6 +29,3 @@ embeddings/
 ._*
 .Spotlight-V100
 .Trashes
-
-discord_token
-app_info.py
